@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+
+
+
+                #map_f9407ab37f2e43e392813d58ec244ace {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+
+                }
+
+            </style>
+        
+</head>
+<body>
+         <div class="folium-map" id="map_f9407ab37f2e43e392813d58ec244ace" ></div>
+</body>
+<script>
+    //harita set ediliyor
+    var map_f9407ab37f2e43e392813d58ec244ace = L.map(
+        "map_f9407ab37f2e43e392813d58ec244ace",
+        {
+            center: [13.0, 16.0],
+            crs: L.CRS.EPSG3857,
+            zoom: 2,
+            zoomControl: true,
+            preferCanvas: false,
+        }
+    );
+           var gemiler = {{gemiler | safe}};
+            var tile_layer_702b55905c0841c7bcbb2b745c3bff86 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_f9407ab37f2e43e392813d58ec244ace);
+
+
+            var tile_layer_f4ff85206d1a47c588339e5242938da2 = L.tileLayer(
+                "https://mt1.google.com/vt/lyrs=m\u0026x={x}\u0026y={y}\u0026z={z}",
+                {"attribution": "Google", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_f9407ab37f2e43e392813d58ec244ace);
+
+
+            var tile_layer_5957bfc02d764817b4412a6cf9e926d4 = L.tileLayer(
+                "https://mt1.google.com/vt/lyrs=y\u0026x={x}\u0026y={y}\u0026z={z}",
+                {"attribution": "Google", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_f9407ab37f2e43e392813d58ec244ace);
+
+
+            var tile_layer_cdd5f05fbe5c4cfd998fcf8e507cacaf = L.tileLayer(
+                "https://mt1.google.com/vt/lyrs=p\u0026x={x}\u0026y={y}\u0026z={z}",
+                {"attribution": "Google", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_f9407ab37f2e43e392813d58ec244ace);
+
+
+            var tile_layer_e525962ea33e42c48f1ac972ee6ff82f = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {"attribution": "Esri", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_f9407ab37f2e43e392813d58ec244ace);
+
+
+            var layer_control_f5115bd10ce24e77b1dd03111af26ea3 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_702b55905c0841c7bcbb2b745c3bff86,
+                    "Google Maps" : tile_layer_f4ff85206d1a47c588339e5242938da2,
+                    "Google Terrain" : tile_layer_cdd5f05fbe5c4cfd998fcf8e507cacaf,
+                    "Esri Satellite" : tile_layer_e525962ea33e42c48f1ac972ee6ff82f,
+                    "Google Satellite" : tile_layer_5957bfc02d764817b4412a6cf9e926d4,
+
+                },
+                overlays :  {
+
+                },
+            };
+            L.control.layers(
+                layer_control_f5115bd10ce24e77b1dd03111af26ea3.base_layers,
+                layer_control_f5115bd10ce24e77b1dd03111af26ea3.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_f9407ab37f2e43e392813d58ec244ace);
+
+
+
+    function makeicon(icon,renk) {
+        return L.AwesomeMarkers.icon(
+        {"extraClasses": "fa-rotate-0", "icon": icon, "iconColor": "white", "markerColor": renk, "prefix": "fa"}
+        );
+    }
+
+
+    function makepopup(id, content, name, notes) {
+		console.log(content);
+		var html_string = "<div id='html_"+id+"' style='width: 100.0%; height: 100.0%;' >";
+		html_string += "<h4>"+name+"</h4><br>";
+		html_string += content+"<br>";
+		html_string += notes+"<br>";
+		html_string += "</div>"; 
+        var html_content = $(html_string)[0];
+        return L.popup({"maxWidth": "100%"}).setContent(html_content)
+    }
+    function makepopup2(id, content, name) {
+		console.log(content);
+		var html_string = "<div id='html_"+id+"' style='width: 100.0%; height: 100.0%;' >";
+		html_string += "<h4>"+name+"</h4><br>";
+		content.forEach(function(it) {
+			html_string += `<a onClick="gotoMark('${it}')">${it}</a><br>`;
+		});
+		html_string += "</div>";
+        var html_content = $(html_string)[0];
+        return L.popup({"maxWidth": "100%"}).setContent(html_content)
+    }
+
+    {% for gemi in gemiler %}
+        var gemi_{{gemi.ID}} = L.marker([{{gemi.LONG}}, {{gemi.LATH}}],{}).addTo(map_f9407ab37f2e43e392813d58ec244ace);
+        gemi_{{gemi.ID}}.setIcon(makeicon('ship','{{gemi.RENK}}'));
+        gemi_{{gemi.ID}}.bindPopup(makepopup('{{gemi.ID}}','{{gemi.ACT}}','{{gemi.NAME}}','{{gemi.NOTES}}'));
+
+        $(".awesome-marker-icon-{{gemi.RENK}}").on('click', function(event){
+                 map_f9407ab37f2e43e392813d58ec244ace.flyToBounds(
+                [[{{gemi.LONG}}, {{gemi.LATH}}], [{{gemi.DEST.LONG}}, {{gemi.DEST.LATH}}]],
+                {"maxZoom":8}
+            );
+
+        });
+
+
+    {% endfor %}
+
+	var list = [];
+    {% for liman,value in limanlar.items() %}
+
+
+        list = [];
+
+        {% for key in value.SHIPS %}
+
+           list.push("{{key}}");
+
+        {% endfor %}
+
+
+        var liman_{{liman}} = L.marker([{{value.LONG}}, {{value.LATH}}],{}).addTo(map_f9407ab37f2e43e392813d58ec244ace);
+        liman_{{liman}}.setIcon(makeicon('anchor','black'));
+        liman_{{liman}}.bindPopup(makepopup2('{{value.ID}}',list,'{{value.NAME}}'));
+
+
+
+    {% endfor %}
+
+
+        var logo = document.createElement('a');
+        logo.innerHTML = "<img src='static/kaplanlar2.png' width='160px' height='40px'  style='z-index:1' />";
+        var mapcont = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
+        mapcont.appendChild(logo);
+
+
+        //liste ile yeni fonksiyon oluştur.
+    function gotoMark(e) {
+        let gemi = null;
+        gemiler.forEach(function(el) {
+            if (e == el.NAME) {
+                gemi = el;
+            }
+        });
+        console.log(e,gemi);
+        if (gemi != null) {
+            map_f9407ab37f2e43e392813d58ec244ace.flyToBounds([[gemi.LONG, gemi.LATH]], {"maxZoom":8});
+        }
+    }
+
+
+    
+</script>
